@@ -1,0 +1,39 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	step_three
+	1	step_two
+	3
+
+[Wed Sep  9 13:39:59 2020]
+rule step_two:
+    output: data/step_two.txt
+    jobid: 2
+
+[Wed Sep  9 13:39:59 2020]
+Finished job 2.
+1 of 3 steps (33%) done
+
+[Wed Sep  9 13:39:59 2020]
+rule step_three:
+    input: data/step_two.txt
+    output: result/step_three.txt
+    jobid: 1
+
+[Wed Sep  9 13:39:59 2020]
+Finished job 1.
+2 of 3 steps (67%) done
+
+[Wed Sep  9 13:39:59 2020]
+localrule all:
+    input: result/step_three.txt
+    jobid: 0
+
+[Wed Sep  9 13:39:59 2020]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: /Users/work/Documents/sm-basic-2/workflow/.snakemake/log/2020-09-09T133959.603506.snakemake.log
