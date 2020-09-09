@@ -5,6 +5,8 @@ rule all:
 rule step_two:
     output:
         "data/step_two.txt",
+    conda:
+        "envs/step_two.yaml"
     shell:
         "plink2 --version > {output}"
 

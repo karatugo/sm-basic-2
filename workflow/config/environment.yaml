@@ -4,4 +4,3 @@ channels:
 dependencies:
   - bioconda::snakemake-minimal =5.23.0
   - python =3.6
-  - bioconda::plink2
